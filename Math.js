@@ -32,6 +32,8 @@ const Math = (function() { // IIFE - immediately invoked func expression
   const multiply = (...rest) => rest.reduce((sum, a) => sum*a, 1)
   //const divide = (...rest) => rest.reduce((sum, a) => sum/a, 1)
   //const subtract = (...rest) => rest.reduce((sum, a) => sum-a)
+  // OR const add = (a,b) => {return a+b}
+  // const multiply = (a,b) => {return a*b}
 
   return {
     add,
@@ -52,10 +54,11 @@ module.exports = {
 const Math = require('./math');
 
 // const {add, multiply} = require('./math');
-// // also possible: 
-// // const Math = require('./math');
+// also possible:  const Math = require('./math');
 
-// console.log(add, multiply)
+console.log(add, multiply);
+console.log(moduole.exports);
+
 /* You will create an Express server that takes in different routes to do random but COOL things!
 Each of the routes are unique and takes in query parameters through GET requests
 Each of the individual functionalities should be seperated into modules that you will build

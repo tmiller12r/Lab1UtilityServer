@@ -8,12 +8,14 @@ const express = require('express');
 // loads express module BUT need to create app as well (next line)
 const app = express();  // initiate an express app
 const port = 3001;      // define a port
+// const math_method = require('./math');
+// const routes = require('./routes/index')
 
 app.get('/', (req, res) => {
     res.send('Hello, World');
 });
 
-app.get('/math/:operation', (req, res) => {
+app.get('/math/:operation', (req, res) => { // '' or ``
   let json;
   console.log(req.params);
   if (req.params.operation == 'add') {
@@ -22,6 +24,10 @@ app.get('/math/:operation', (req, res) => {
     const input = {};
     let sumString = "";
     let sum = 0;
+// res.sendStatus(math_method.add())
+// console.log(req.query)
+// console.log(Object.values(req.query));
+// res.sendStatus(math_method.add())
 
     for (const key in req.query) {
       // construct values needed for our return object
@@ -55,3 +61,25 @@ app.get('/math/:operation', (req, res) => {
 
 app.listen(port, () =>  console.log(`server listening on port ${port}`));
 // test request and response to server
+
+
+// app.get(`/math/add`,(req,res) => {
+
+//     console.log(req.query)
+//     console.log(Object.values(req.query));
+//     res.sendStatus(math_method.add()) 
+
+// })
+// app.get(`/math/multiply`,(req,res) => {
+   
+//         console.log(req.query)
+//         console.log(Object.values(req.query));
+//         console.log(typeof math_method)
+//         res.sendStatus(math_method.multiply())
+    
+//     })
+  
+// // app.add(a+b){
+// //     return a + b
+// // }
+// // console.log(add)
